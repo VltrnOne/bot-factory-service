@@ -1,0 +1,7 @@
+replicaCount: 2
+image:
+  repository: my-registry/bot-factory
+  tag: "0.1.0"
+service:
+  type: ClusterIP
+  port: 3000

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PersonaTemplate",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string", "description": "Unique persona identifier"},
+    "name": {"type": "string"},
+    "tone": {"type": "string", "enum": ["professional","friendly","casual"]},
+    "channels": {
+      "type": "object",
+      "properties": {
+        "email": {"type": "number", "minimum": 0},
+        "sms": {"type": "number", "minimum": 0},
+        "dm": {"type": "number", "minimum": 0}
+      },
+      "required": ["email","sms","dm"]
+    },
+    "complianceRules": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["id","name","tone","channels"]
+}

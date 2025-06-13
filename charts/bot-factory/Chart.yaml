@@ -1,0 +1,4 @@
+apiVersion: v2
+name: bot-factory
+version: 0.1.0
+description: Bot Factory microservice
