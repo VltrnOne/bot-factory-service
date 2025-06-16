@@ -1,7 +1,20 @@
-replicaCount: 2
+replicaCount: 1
+
 image:
-  repository: my-registry/bot-factory
-  tag: "0.1.0"
+  repository: your-dockerhub-username/bot-factory
+  tag: v5.0.0
+  pullPolicy: IfNotPresent
+
 service:
   type: ClusterIP
-  port: 3000
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources: {}
